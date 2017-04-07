@@ -5,30 +5,50 @@
 <link rel="stylesheet" href="shoeCatalogue.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
 <title>Shoe Catalogue</title>
-  </head>
+</head>
   <body>
-    <script class="myTemplate" type="text/handlebars-x">
-      {{#each shoes}}
-        <li>Brand: {{this.Brand}}</li>
-        <li>color: {{this.Color}}</li>
-        <li>price: {{this.Price}}</li>
-        <li>size:  {{this.Size}}</li><br>
-      {{/each}}
+     <script class="myTemplate" type="text/handlebars-x">
+
+            <table>
+        <tr>
+        <th>Brand</th>
+        <th>Color</th>
+        <th>Size</th>
+        <th>Price</th>
+        </tr>
+        {{#each shoes}}
+        <tr>
+        <td>{{Brand}}</td>
+        <td>{{Color}}</td>
+        <td>{{Size}}</td>
+        <td>{{Price}}</td>
+        </tr>
+        {{/each}}
+            </table>
   </script>
+
     <h1 id="shoeHeader">Shoe Catalogue</h2>
       <img src="shoeBrand.jpg" alt="shoe"height="200px"/><br><br>
-<div id="options">
-  Color <select class="colorClass">/
-  <option value="colors">Colors</option>
-  <option value="white">White</option>
-  <option value="black">Black</option>
-  <option value="red">Red</option>
+<div class="options">
+
+    Brand <select class="brandClass">
+  <option value="Brand">Brand</option>
+  <option value="MakhoSneakers">MakhoSneakers</option>
+  <option value="ThabsSneakers">ThabsSneakers</option>
+  <option value="YanSneakers">YanSneakers</option>
+  <option value="LuckSneakers">LuckSneakers</option>
+  </select><br><br>
+   Color <select class="colorClass">
+  <option value="Color">Color</option>
+  <option value="White">White</option>
+  <option value="Black">Black</option>
+  <option value="Red">Red</option>
 </select><br><br>
 Size <select class="sizeClass">
-  <option value="size">Size</option>
-  <option value="size7">7</option>
-  <option value="size8">8</option>
-  <option value="size9">9</option>
+   <option value="Size">Size</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
 
 </select></div><br><br>
 
