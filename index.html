@@ -2,7 +2,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-<link rel="stylesheet" href="shoeCatalogue.css">
+<center><link rel="stylesheet" href="shoeCatalogue.css"><center>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
 <title>Shoe Catalogue</title>
 </head>
@@ -16,47 +16,48 @@
         <th>Size</th>
         <th>Price</th>
         </tr>
-        {{#each shoes}}
+
+        {{#each shoesList}}
         <tr>
-        <td>{{Brand}}</td>
-        <td>{{Color}}</td>
-        <td>{{Size}}</td>
-        <td>{{Price}}</td>
+        <td>{{this.Brand}}</td>
+        <td>{{this.Color}}</td>
+        <td>{{this.Size}}</td>
+        <td>{{this.Price}}</td>
         </tr>
         {{/each}}
-            </table>
+        </table>
   </script>
 
     <h1 id="shoeHeader">Shoe Catalogue</h2>
       <img src="shoeBrand.jpg" alt="shoe"height="200px"/><br><br>
-<div class="options">
+<center><div class="options">
 
-    Brand <select class="brandClass">
+   Brand <select class="brandClass">
   <option value="Brand">Brand</option>
   <option value="MakhoSneakers">MakhoSneakers</option>
   <option value="ThabsSneakers">ThabsSneakers</option>
   <option value="YanSneakers">YanSneakers</option>
   <option value="LuckSneakers">LuckSneakers</option>
-  </select><br><br>
-   Color <select class="colorClass">
+</select></center><br><br>
+<center>   Color <select class="colorClass">
   <option value="Color">Color</option>
   <option value="White">White</option>
   <option value="Black">Black</option>
   <option value="Red">Red</option>
-</select><br><br>
-Size <select class="sizeClass">
+</select></center><br><br>
+<center>Size <select class="sizeClass">
    <option value="Size">Size</option>
   <option value="7">7</option>
   <option value="8">8</option>
   <option value="9">9</option>
 
-</select></div><br><br>
+</select></center></div></center><br><br>
 
-<button type="button" id="searchButton">search</button><br><br>
+<center><button type="button" id="searchButton">search</button></center><br><br>
 
 <div id="displayStock">
-<p></p>
 </div>
+
+<script src="shoeCatalogue.js" charset="utf-8"></script>
   </body>
-  <script src="shoeCatalogue.js" charset="utf-8"></script>
 </html>

@@ -5,7 +5,7 @@
 li {
 list-style-type: none;
 }
-#options {
+.options {
   display: inline-block;
 }
 table {

@@ -14,13 +14,22 @@ var sizeClass= document.querySelector(".sizeClass");
 
 var shoeDataList = [
   {Brand: "MakhoSneakers", Color:"White", Size:7, Price:"R250"},
+  {Brand: "MakhoSneakers", Color:"White", Size:8, Price:"R250"},
+  {Brand: "MakhoSneakers", Color:"White", Size:9, Price:"R250"},
+  {Brand: "MakhoSneakers", Color:"White", Size:10, Price:"R250"},
+  {Brand: "ThabsSneakers", Color:"Black", Size:7, Price:"R350"},
   {Brand: "ThabsSneakers", Color:"Black", Size:8, Price:"R350"},
+  {Brand: "ThabsSneakers", Color:"Black", Size:9, Price:"R350"},
+  {Brand: "ThabsSneakers", Color:"Black", Size:10, Price:"R350"},
+  {Brand: "YanSneakers", Color:"Brown", Size:7, Price:"R450"},
+  {Brand: "YanSneakers", Color:"Brown", Size:8, Price:"R450"},
   {Brand: "YanSneakers", Color:"Brown", Size:9, Price:"R450"},
-  {Brand: "LuckSneakers", Color: "Red", Size:10, Price: "R550"},
-  {Brand: "MakhoSneakers", Color:"Black", Size:8, Price:"R250"},
-  {Brand: "ThabsSneakers", Color:"White", Size:7, Price:"R350"},
-  {Brand: "YanSneakers", Color: "Red", Size: 9, Price: "R450"},
-  {Brand: "LuckSneakers", Color: "Brown", Size:10, Price: "R550"}
+  {Brand: "YanSneakers", Color:"Brown", Size:10, Price:"R450"},
+  {Brand: "LuckSneakers", Color: "Red", Size:7, Price:"R550"},
+  {Brand: "LuckSneakers", Color: "Red", Size:8, Price:"R550"},
+  {Brand: "LuckSneakers", Color: "Red", Size:9, Price:"R550"},
+  {Brand: "LuckSneakers", Color: "Red", Size:10, Price:"R550"}
+
 ]
 // var myOptionsTemplate = document.querySelector(".myOptionsTemplate");
 //var templateOptions = Handlebars.compile(myOptionsTemplate.innerHTML);
@@ -31,23 +40,26 @@ var shoeDataList = [
  var template = Handlebars.compile(myTemplate.innerHTML);
  var shoeFilter=[];
 
- var selectedBrand = brandClass.value;
- var selectedColor = colorClass.value;
- var selectedSize = sizeClass.value;
 searchBut.addEventListener("click", function(){
-  
-for (var i = 0; i < shoeDataList.length; i++) {
-if(shoeDataList[i].Brand === selectedBrand
-  && shoeDataList[i].Color === selectedColor
-  && shoeDataList[i].Size === selectedSize){
-  shoeFilter.push(shoeDataList[i]);
-  //alert(shoeFilter);
+  var selectedBrand = brandClass.value;
+  var selectedColor = colorClass.value;
+  var selectedSize = Number(sizeClass.value);
+//shoeData = shoeDataList[i]
+  if(selectedBrand =="" && selectedColor =="" && selectedSize ==""){
+    // stock.push(shoeDataList);
+  stock.innerHTML  = template({ shoesList: shoeDataList })
+  }
+ for (var i = 0; i < shoeDataList.length; i++) {
+  if(selectedBrand === shoeDataList[i].Brand
+  && selectedColor === shoeDataList[i].Color
+  && selectedSize === shoeDataList[i].Size){
+    shoeFilter.push(shoeDataList[i]);
+  }
 }
-}
-var shoeStock = template({ shoeDataList: shoeFilter })
+var shoeStock = template({ shoesList: shoeFilter })
 stock.innerHTML = shoeStock;
-
 });
+
 
 
 
