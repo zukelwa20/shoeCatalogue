@@ -60,6 +60,20 @@ var shoeStock = template({ shoesList: shoeFilter })
 stock.innerHTML = shoeStock;
 });
 
+var filterTemplate = document.querySelector(".filterTemplate");
+var filterTempOptions = handlebars.compile(filterTemplate.innerHTML);
+
+(function(){
+
+ options.innerHTML = filterTempOptions({ Brand: shoeFilter,
+                                         Color: shoeFilter,
+                                         Size: shoeFilter})
+
+});
+
+
+
+
 
 
 

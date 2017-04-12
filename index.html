@@ -14,7 +14,7 @@
         <th>Brand</th>
         <th>Color</th>
         <th>Size</th>
-        <th>Price</th>
+        <th>Price</t
         </tr>
 
         {{#each shoesList}}
@@ -32,14 +32,18 @@
       <img src="shoeBrand.jpg" alt="shoe"height="200px"/><br><br>
 <center><div class="options">
 
+ <script class="filterTemplate" type="text/handlebars-x">
    Brand <select class="brandClass">
-  <option value="Brand">Brand</option>
-  <!-- <option value="MakhoSneakers">MakhoSneakers</option>
-  <option value="ThabsSneakers">ThabsSneakers</option>
-  <option value="YanSneakers">YanSneakers</option>
-  <option value="LuckSneakers">LuckSneakers</option> -->
+  <option value="">Brand</option>
+  {{#each Brand}}
+  <option>{{this.Brand}}</option>
+  {{/each}}
 </select></center><br><br>
-<center>   Color <select class="colorClass">
+  // <<option value="MakhoSneakers">MakhoSneakers</option>
+  // <option value="ThabsSneakers">ThabsSneakers</option>
+  // <option value="YanSneakers">YanSneakers</option>
+  // <option value="LuckSneakers">LuckSneakers</option>
+<center>Color <select class="colorClass">
   <option value="Color">Color</option>
   <option value="White">White</option>
   <option value="Black">Black</option>
@@ -52,7 +56,7 @@
   <option value="9">9</option>
 
 </select></center></div></center><br><br>
-
+</script>
 <center><button type="button" id="searchButton">search</button></center><br><br>
 
 <div id="displayStock">
