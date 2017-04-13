@@ -33,30 +33,33 @@
 <center><div class="options">
 
  <script class="filterTemplate" type="text/handlebars-x">
-   Brand <select class="brandClass">
-  <option value="">Brand</option>
-  {{#each Brand}}
+   <select class="brandClass">
+  <option value="" disabled selected="">Brand</option>
+         {{#each Brand}}
   <option>{{this.Brand}}</option>
-  {{/each}}
+            {{/each}}
 </select></center><br><br>
-  // <<option value="MakhoSneakers">MakhoSneakers</option>
-  // <option value="ThabsSneakers">ThabsSneakers</option>
-  // <option value="YanSneakers">YanSneakers</option>
-  // <option value="LuckSneakers">LuckSneakers</option>
-<center>Color <select class="colorClass">
-  <option value="Color">Color</option>
-  <option value="White">White</option>
-  <option value="Black">Black</option>
-  <option value="Red">Red</option>
-</select></center><br><br>
-<center>Size <select class="sizeClass">
-   <option value="Size">Size</option>
-  <option value="7">7</option>
-  <option value="8">8</option>
-  <option value="9">9</option>
 
-</select></center></div></center><br><br>
-</script>
+<center> <select class="colorClass">
+  <option value="" disabled selected="">Color</option>
+      {{#each Color}}
+    <option>{{this.Color}}</option>
+          {{/each}}
+ </select></center><br><br>
+
+<center><select class="sizeClass">
+   <option value="" disabled selected="">Size</option>
+   {{#each Size}}
+  <option>{{this.Size}}</option>
+            {{/each}}
+</select></div></center><br><br>
+</script></center>
+
+
+<div class="tempDisplay">
+  <div></div>
+    <div></div>
+</div>
 <center><button type="button" id="searchButton">search</button></center><br><br>
 
 <div id="displayStock">

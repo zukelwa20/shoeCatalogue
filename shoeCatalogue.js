@@ -38,8 +38,10 @@ var shoeDataList = [
 
  var myTemplate = document.querySelector(".myTemplate");
  var template = Handlebars.compile(myTemplate.innerHTML);
- var shoeFilter=[];
 
+
+
+ var shoeFilter=[];
 searchBut.addEventListener("click", function(){
   var selectedBrand = brandClass.value;
   var selectedColor = colorClass.value;
@@ -60,18 +62,15 @@ var shoeStock = template({ shoesList: shoeFilter })
 stock.innerHTML = shoeStock;
 });
 
+var tempDisplay = document.querySelector(".tempDisplay");
 var filterTemplate = document.querySelector(".filterTemplate");
-var filterTempOptions = handlebars.compile(filterTemplate.innerHTML);
+var filterTempOptions = Handlebars.compile(filterTemplate.innerHTML);
 
 (function(){
-
- options.innerHTML = filterTempOptions({ Brand: shoeFilter,
-                                         Color: shoeFilter,
-                                         Size: shoeFilter})
-
-});
-
-
+tempDisplay.innerHTML = filterTempOptions({ Brand: shoeDataList,
+                                             Color: shoeDataList,
+                                             Size: shoeDataList})
+})()
 
 
 
