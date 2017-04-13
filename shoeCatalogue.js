@@ -1,9 +1,6 @@
 var stock = document.getElementById("displayStock");
 var searchBut = document.querySelector("#searchButton");
 var options = document.querySelector("#options");
-var brandClass= document.querySelector(".brandClass");
-var colorClass=document.querySelector(".colorClass");
-var sizeClass= document.querySelector(".sizeClass");
 
 //alert(Handlebars);
 
@@ -43,14 +40,17 @@ var shoeDataList = [
 
  var shoeFilter=[];
 searchBut.addEventListener("click", function(){
+  var brandClass= document.querySelector(".brandClass");
+  var colorClass=document.querySelector(".colorClass");
+  var sizeClass= document.querySelector(".sizeClass");
   var selectedBrand = brandClass.value;
   var selectedColor = colorClass.value;
   var selectedSize = Number(sizeClass.value);
-//shoeData = shoeDataList[i]
-  if(selectedBrand =="" && selectedColor =="" && selectedSize ==""){
-    // stock.push(shoeDataList);
-  stock.innerHTML  = template({ shoesList: shoeDataList })
-  }
+// //shoeData = shoeDataList[i]
+//   if(selectedBrand =="" && selectedColor =="" && selectedSize ==""){
+//     // stock.push(shoeDataList);
+//   stock.innerHTML  = template({ shoesList: shoeDataList })
+//   }
  for (var i = 0; i < shoeDataList.length; i++) {
   if(selectedBrand === shoeDataList[i].Brand
   && selectedColor === shoeDataList[i].Color
