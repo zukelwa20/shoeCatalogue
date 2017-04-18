@@ -1,11 +1,12 @@
 #shoeHeader {
 
-  text-decoration: green;
+  color: green;
 }
 li {
 list-style-type: none;
 }
 .options {
+  background-position: right;
   display: inline-block;
 }
 table {
@@ -14,4 +15,10 @@ table {
 
 table, th, td {
     border: 1px solid black;
+}
+.addButton{
+
+}
+input placeholder {
+  text-align: center;
 }

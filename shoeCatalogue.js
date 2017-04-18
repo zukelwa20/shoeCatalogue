@@ -36,6 +36,13 @@ var shoeDataList = [
  var myTemplate = document.querySelector(".myTemplate");
  var template = Handlebars.compile(myTemplate.innerHTML);
 
+(function(){
+
+  var shoeStock = template({ shoesList: shoeDataList })
+  stock.innerHTML = shoeStock;
+
+})
+
 
 
  var shoeFilter=[];
@@ -60,6 +67,7 @@ searchBut.addEventListener("click", function(){
 }
 var shoeStock = template({ shoesList: shoeFilter })
 stock.innerHTML = shoeStock;
+
 });
 
 var tempDisplay = document.querySelector(".tempDisplay");
@@ -73,6 +81,31 @@ tempDisplay.innerHTML = filterTempOptions({ Brand: shoeDataList,
 })()
 
 
+ var addBox = document.querySelector(".addBox");
+
+addBox.addEventListener("click", function(){
+
+  var brandBox = document.querySelector(".brandBox");
+  var colorBox = document.querySelector(".colorBox");
+  var sizeBox = document.querySelector(".sizeBox");
+//alert("im clicked");
+
+var brandB = brandBox.value;
+var colorB = colorBox.value;
+var sizeB = Number(sizeBox.value);
+
+var newStock = {
+  Brand: brandBox.value,
+  Color: colorBox.value,
+  Size: Number(sizeBox.value)
+}
+shoeDataList.push(newStock);
+
+// if(brandB !==""){
+//   shoeDataList.push()
+
+
+});
 
 
 
