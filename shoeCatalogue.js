@@ -36,37 +36,39 @@ var shoeDataList = [
  var myTemplate = document.querySelector(".myTemplate");
  var template = Handlebars.compile(myTemplate.innerHTML);
 
-(function(){
-
-  var shoeStock = template({ shoesList: shoeDataList })
-  stock.innerHTML = shoeStock;
-
-})
+// (function(){
+//
+//   var shoeStock = template({ shoesList: shoeDataList })
+//   stock.innerHTML = shoeStock;
+//
+// })
 
 
 
  var shoeFilter=[];
-searchBut.addEventListener("click", function(){
+  searchBut.addEventListener("click", function(){
   var brandClass= document.querySelector(".brandClass");
   var colorClass=document.querySelector(".colorClass");
   var sizeClass= document.querySelector(".sizeClass");
   var selectedBrand = brandClass.value;
   var selectedColor = colorClass.value;
   var selectedSize = Number(sizeClass.value);
-// //shoeData = shoeDataList[i]
-//   if(selectedBrand =="" && selectedColor =="" && selectedSize ==""){
-//     // stock.push(shoeDataList);
+// shoeData = shoeDataList[i]
+//    if(selectedBrand =="" && selectedColor =="" && selectedSize ==""){
+//        stock.push(shoeDataList);
 //   stock.innerHTML  = template({ shoesList: shoeDataList })
-//   }
+//    }
  for (var i = 0; i < shoeDataList.length; i++) {
   if(selectedBrand === shoeDataList[i].Brand
   && selectedColor === shoeDataList[i].Color
   && selectedSize === shoeDataList[i].Size){
-    shoeFilter.push(shoeDataList[i]);
+    shoeFilter.push(shoeDataList);
   }
 }
-var shoeStock = template({ shoesList: shoeFilter })
-stock.innerHTML = shoeStock;
+  stock.innerHTML = template({ shoesList: shoeFilter,
+                              shoesList: shoeDataList})
+
+
 
 });
 
@@ -77,7 +79,8 @@ var filterTempOptions = Handlebars.compile(filterTemplate.innerHTML);
 (function(){
 tempDisplay.innerHTML = filterTempOptions({ Brand: shoeDataList,
                                              Color: shoeDataList,
-                                             Size: shoeDataList})
+                                             Size: shoeDataList,
+                                             Price: shoeDataList})
 })()
 
 
@@ -95,17 +98,22 @@ var colorB = colorBox.value;
 var sizeB = Number(sizeBox.value);
 
 var newStock = {
-  Brand: brandBox.value,
-  Color: colorBox.value,
-  Size: Number(sizeBox.value)
-}
-shoeDataList.push(newStock);
+  Brand: brandB,
+  Color: colorB,
+  Size: sizeB
+};
+shoeDataList.push(newStock)
+
+
+tempDisplay.innerHTML = filterTempOptions({ Brand: shoeDataList,
+                                            Color: shoeDataList,
+                                            Size: shoeDataList,
+                                            Price: shoeDataList});
+                                          });
 
 // if(brandB !==""){
 //   shoeDataList.push()
 
-
-});
 
 
 
