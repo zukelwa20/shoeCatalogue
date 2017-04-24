@@ -1,13 +1,31 @@
 #shoeHeader {
-
   color: green;
 }
-li {
-list-style-type: none;
+.body{
+     width : 960px;
+     margin :0px auto;
+     padding:25px;
+     border:1px solid #ccc;
+     background-color: blue;
+   }
+   .container {
+      width: 825px;
+      border:1px solid #966;
+      margin:0;
+      padding:0;
 }
-.options {
-  background-position: right;
+.options{
+  background-color: yellow;
+}
+li{
+list-style-type: none;
+display: inline-block;
+background-color: yellow;
+}
+ center, options {
   display: inline-block;
+  align-content: center;
+  padding: left;
 }
 table {
     border-collapse: collapse;
@@ -15,6 +33,7 @@ table {
 
 table, th, td {
     border: 1px solid black;
+    border-width: 2px;
 }
 .addButton{
 

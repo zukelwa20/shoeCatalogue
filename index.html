@@ -6,7 +6,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
 <title>Shoe Catalogue</title>
 </head>
-  <body>
+  <body><div class="container">
      <script class="myTemplate" type="text/handlebars-x">
 
             <table>
@@ -30,43 +30,44 @@
 
     <h1 id="shoeHeader">Shoe Catalogue</h2>
       <img src="shoeBrand.jpg" alt="shoe"height="200px"/><br><br>
-<center><div class="options">
 
+      <div class="options">
  <script class="filterTemplate" type="text/handlebars-x">
- <select class="brandClass">
+ <li><select class="brandClass">
  <option value="" disabled selected="">Brand</option>
          {{#each Brand}}
   <option>{{this.Brand}}</option>
             {{/each}}
-</select></center><br><br>
+</select></center></li>
 
-<center> <select class="colorClass">
+<li><center> <select class="colorClass">
   <option value="" disabled selected="">Color</option>
            {{#each Color}}
     <option>{{this.Color}}</option>
           {{/each}}
- </select></center><br><br>
+ </select></center></li>
 
-<center><select class="sizeClass">
+<li><center><select class="sizeClass">
    <option value="" disabled selected="">Size</option>
          {{#each Size}}
   <option>{{this.Size}}</option>
             {{/each}}
-</select></center><br><br>
-<center><select class="priceClass">
+</select></center></li>
+<li><center><select class="priceClass">
 <option value="" disabled selected="">Price</option>
       {{#each Price}}
-<option>{{this.Price}}</option>pgi
+<option>{{this.Price}}</option>
         {{/each}}
-      </center></div></script>
+  </select></center></li></script></div>
 
 <br><br>
-<div class="tempDisplay">
+<div class="stock2"></div>
+<div class="display">
   <div></div>
     <div></div>
 </div><br><br>
 <center><button type="button" id="searchButton">search</button></center><br><br>
-
+<input type="button"  class="showButton" value="STOCK"><br><br>
 <div id="displayStock">
 </div>
 <div class= "inpBox">
@@ -76,5 +77,5 @@
 </div><br><br>
 <input type="Button" class="addBox" value="Add button">
 <script src="shoeCatalogue.js" charset="utf-8"></script>
-  </body>
+  </container></body>
 </html>
