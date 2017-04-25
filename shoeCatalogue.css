@@ -1,5 +1,5 @@
 #shoeHeader {
-  color: green;
+  color: silver;
 }
 .body{
      width : 960px;
@@ -13,6 +13,8 @@
       border:1px solid #966;
       margin:0;
       padding:0;
+      border-width: 200px;
+      height: 0px;
 }
 .options{
   background-color: yellow;
@@ -40,4 +42,8 @@ table, th, td {
 }
 input placeholder {
   text-align: center;
+}
+.stock2 {
+  background-color: #966;
+  border-collapse: inherit;
 }
