@@ -33,6 +33,22 @@ var shoeDataList = [
  var filterTemplate = document.querySelector(".filterTemplate");
  var filterTempOptions = Handlebars.compile(filterTemplate.innerHTML);
 
+function brandUniquelist(shoeDataList){
+var brandUniq = [];
+var brandMap = {};
+for (var i = 0; i < shoeDataList.length; i++){
+var dataList = shoeDataList[i];
+if(brandMap[dataList.Brand] === undifined){
+  brandMap[dataList.Brand] = dataList.Brand
+  brandUniq.push(dataList.Brand);
+}
+}
+// return brandUniq;
+stock2.innerHTML = tamplate({Brand : dataList});
+}
+
+
+
 showButton.addEventListener("click", function(){
    display.innerHTML = template({shoesList: shoeDataList})
  });
