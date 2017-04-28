@@ -33,19 +33,6 @@ var shoeDataList = [
  var filterTemplate = document.querySelector(".filterTemplate");
  var filterTempOptions = Handlebars.compile(filterTemplate.innerHTML);
 
-function brandUniquelist(shoeDataList){
-var brandUniq = [];
-var brandMap = {};
-for (var i = 0; i < shoeDataList.length; i++){
-var dataList = shoeDataList[i];
-if(brandMap[dataList.Brand] === undifined){
-  brandMap[dataList.Brand] = dataList.Brand
-  brandUniq.push(dataList.Brand);
-}
-}
-// return brandUniq;
-stock2.innerHTML = tamplate({Brand : dataList});
-}
 
 
 
@@ -61,19 +48,45 @@ showButton.addEventListener("click", function(){
   var selectedBrand = brandClass.value;
   var selectedColor = colorClass.value;
   var selectedSize = Number(sizeClass.value);
-
-
-
-var shoeFilter=[];
-for (var i = 0; i < shoeDataList.length; i++) {
-     shoeData = shoeDataList[i];
-    if(selectedBrand === shoeData.Brand || selectedColor === shoeData.Color
-    || selectedSize === shoeData.Size){
-     shoeFilter.push(shoeData);
+  //
+  function brandFilter(input){
+    return input.Brand == selectedBrand;
+  }
+  function colorFilter(input){
+    return input.Color == selectedColor;
+  }
+  function sizeFilter(input){
+    return input.Size == selectedSize;
+  }
+  if (selectedBrand !== "") {
+    var newShoes = shoeDataList.filter(brandFilter);
+  }
+  if(selectedSize!==0){
+    if (selectedBrand !=="") {
+      var newShoes = newShoes.filter(sizeFilter);
+    }else {
+    var  newShoes = shoeDataList.filter(sizeFilter);
     }
   }
+if(selectedColor!==""){
+  if (selectedBrand !=="" || selectedSize !==0) {
+  var  newShoes = newShoes.filter(colorFilter);
+  }else {
+    var   newShoes = shoeDataList.filter(colorFilter);
+  }
+}
 
-stock.innerHTML = template({shoesList: shoeFilter})
+// var shoeFilter=[];
+// for (var i = 0; i < shoeDataList.length; i++) {
+//      shoeData = shoeDataList[i];
+//     if(selectedBrand === shoeData.Brand || selectedBrand === shoeData.Brand
+//     && selectedColor === shoeData.Color || selectedColor === shoeData.Color
+//     && selectedSize === shoeData.Size || selectedSize === shoeData.Size){
+//      shoeFilter.push(shoeData);
+//     }
+//   }
+
+stock.innerHTML = template({shoesList: newShoes})
 });
 
 var tempDisplay = document.querySelector(".tempDisplay");
@@ -97,6 +110,20 @@ addBox.addEventListener("click", function(){
 //alert("im clicked");
 
 var brandB = brandBox.value;
+// function brandUniquelist(shoeDataList){
+  var brandUniq = [];
+  var brandMap = {};
+
+  for (var i = 0; i < shoeDataList.length; i++){
+    var dataList = shoeDataList[i];
+    if(brandMap[dataList.Brand] === "undefined"){
+      brandMap[dataList.Brand] = dataList.Brand
+      brandUniq.push(dataList.Brand);
+    }
+  }
+  // return brandUniq;
+  //stock2.innerHTML = tamplate({Brand : dataList});
+
 var colorB = colorBox.value;
 var sizeB = Number(sizeBox.value);
 
